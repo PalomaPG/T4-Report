@@ -1,0 +1,30 @@
+\section{Selecci\'on de caracter\'isticas y clasificaci\'on de datos de diabetes}
+
+En esta secci\'on usamos un clasificador SMO con los valores prestablecidos (o por defecto) definidos en el software WEKA, con el cual entrenamos el 66\% de los datos, mientras que el resto es destinado a la evaluci\'on (conjunto de prueba).
+
+\subsection{Clasificaci\'on por defecto}
+La clasificaci\'on obtenida usando todas las caracter\'isticas de los datos de diabetes entrega la siguiente matriz de confusi\'on.
+\begin{center}
+\input{dia_mc1}
+\end{center}
+
+De estos resultados se desprende que se logra un 79.31\% de instancias correctamente clasificadas. 
+\subsection{Clasificaci\'on seleccionando caracter\'isticas usando BestFirst y WrapperSubsetEval}
+Para este experimento usamos el seleccionador de conjuntos BestFirst y el evaluador WrapperSubsetEval. Este \'ultimo debe ser configurado para poder realizar las evaluaciones de los  subconjuntos usando SMO. En esta ocasi\'on, los resultados obtenidos por la selecci\'on de caracter\'isticas indican que la informaci\'on aportada por el feature \textit{skin} no es relevante. Descartando este atributo se obtiene la siguiete matriz de confusi\'on. 
+\begin{center}
+\input{dia_mc2}
+\end{center}
+De estos resultados se desprende que se logra un 79.31\% de instancias correctamente clasificadas. Es decir, se mantiene el porcentaje anterior.
+\subsection{Clasificaci\'on seleccionando s\'olo 4 caracter\'isticas usando Ranker e InfoGainAttributeEval}
+Para este experimento usamos el seleccionador de conjuntos Ranker y el evaluador InfoGainAttributeEval.  En esta oportunidad se estima que los atributos \textit{plas}, \textit{insu}, \textit{mass} y \textit{age}  son las cuatro primeras caracter\'isticas que mejor  describen el modelo aportando informaci\'on significativa.
+\begin{center}
+\input{dia_mc3}
+\end{center}
+Usando estas features se obtiene un 80.07\% de instancias correctamente clasificadas.
+\subsection{Clasificaci\'on seleccionando s\'olo 2 caracter\'isticas usando Ranker e InfoGainAttributeEval}
+En este experimento nuevamente usamos Ranker y el evaluador InfoGainAttributeEval, sin embargo esta vez escogemos las 2 mejores features, las que resultan ser \textit{plass} y \textit{mass}. 
+\begin{center}
+\input{dia_mc4}
+\end{center}
+
+En esta oportunidad, el resultado de instancias correctamente clasificadasa mejor\'o sustancialmente, alcanzando un 80.84\%. 

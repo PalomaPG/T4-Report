@@ -1,0 +1,25 @@
+\section{Marco te\'orico}\label{sec2}
+\subsection{Selecci\'on de caracter\'isticas}
+En aprendizaje de m\'aquinas y estad\'istica, la \textit{selecci\'on de caracter\'isticas} corresponde esencialmente a la selecci\'on de un subconjunto de atributos relevantes para la construcci\'on de un modelo. Esta selecci\'on se realiza por las siguientes razones:
+\begin{enumerate}
+\item Simplificaci\'on del modelo para lograr una interpretaci\'on m\'as f\'acil de conseguir.
+\item Disminuir los tiempos de entrenamiento
+\item Para evitar la \textbf{maldici\'on de la dimensionalidad}~\cite{bellman}, la cual no s\'olo complejiza el entrenamiento, sino tambi\'en exige una mayor cantidad de datos de entrenamiento.
+\item Lograr una mejor generalizaci\'on del modelo, reduciendo el overfitting (i.e. para reducir la varianza).
+\end{enumerate}
+
+Su finalidad es la de deshacerse de informaci\'on irrelevante o que no aporta informaci\'on significativa dentro del modelo. 
+\subsection{Etapas de la selecci\'on de caracter\'isticas}
+\begin{enumerate}
+\item \textbf{Generaci\'on de subconjuntos:} Es un procedimiento de sondeo que genera subconjuntos candidatos de caracter\'isticas para la evaluaci\'on, bas\'andose en una \textit{estrategia de b\'usqueda}~\cite{liuyu}. 
+\item \textbf{Evaluaci\'on:} Cada subconjunto candidato es evaluado y comparado con los resultados obtenidos por el mejor subconjunto previo (el que ha obtenido mejores resultados en clasificaci\'on) de acuerdo a un \textit{criterio de evaluaci\'on}. La generaci\'on de estos conjuntos depender\'a de la m\'etrica de evaluaci\'on, la cual puede corresponder a una de las siguientes categor\'ias: de filtrado, wrappers o m\'etodo embebido.
+\item \textbf{Criterio de parada:}
+\item \textbf{Validaci\'on:} El subconjunto seleccionado usualmente requiere de ser validado a trav\'es de conocimiento que se tenga de los datos o a trav\'es de diferentes pruebas usando datos sint\'eticos o reales.
+\end{enumerate}
+\subsection{Metodolog\'ias para la generaci\'on de subconjuntos}
+\begin{enumerate}
+\item \textbf{Completa:} 
+\item \textbf{Heur\'istica:}
+\item \textbf{Aleatoria:}
+\end{enumerate}
+\subsection{Metodolog\'ias de evaluaci\'on de subconjuntos}
