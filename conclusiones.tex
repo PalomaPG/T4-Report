@@ -1,1 +1,7 @@
-\section{Conclusi\'on}	
+\section{Conclusi\'on}\label{sec6}
+La mejor soluci\'on para el dataset de diabetes correspondi\'o a la selecci\'on de las cuatro mejores caracter\'isticas usando Ranker como m\'etodo de generaci\'on de subconjuntos e InforGainAttributeEval como m\'etodo evaluador, para el modelo SMO. Por el contrario, el conjunto de datos de d\'igitos se vio afectado negativamente por la selecci\'on de atributos, lo que indicar\'ia que, una reducci\'on en la informaci\'on entregada al modelo de entrenamiento puede perjudicar el proceso de clasificaci\'on. Esto \'ultimo puede deberse a la subestimaci\'on por parte del m\'etodo evaluador como WrapperSubsetEval o una mala selecci\'on del m\'etodo de generaci\'on de conjuntos como BestFirst para SMO en particular (en esta tarea s\'olo se emple\'o el modelo SMO).
+\bigskip
+
+Cabe destacar, como se mencion\'o anteriormente para el caso de los datos de diabetes, la clasificaci\'on mejor\'o sustancialmente al disminuir la cantidad de caracter\'isticas a menos de la mitad. Esto podr\'ia insinuar que hay datos cuya clasificac\'on es m\'as o menos sensible a la selecci\'on de atributos y puede ser afectada de manera negativa (clasificaci\'on de d\'igitos) o positiva (clasificaci\'on de diabetes). Esta sensibilidad estar\'a determinada por la dependencia del modelo respecto de los atributos (a veces, dos o m\'as atributos por si solos no aportan informaci\'on relevante, pero juntos si lo hacen).
+
+Es probable que los resultados cambien para ambos datasets usando modelos de clasificadores diferentes (por ejemplo, un modelo no-lineal para la clasificaci\'on de los datos de los d\'igitos).

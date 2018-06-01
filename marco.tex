@@ -13,13 +13,21 @@ Su finalidad es la de deshacerse de informaci\'on irrelevante o que no aporta in
 \begin{enumerate}
 \item \textbf{Generaci\'on de subconjuntos:} Es un procedimiento de sondeo que genera subconjuntos candidatos de caracter\'isticas para la evaluaci\'on, bas\'andose en una \textit{estrategia de b\'usqueda}~\cite{liuyu}. 
 \item \textbf{Evaluaci\'on:} Cada subconjunto candidato es evaluado y comparado con los resultados obtenidos por el mejor subconjunto previo (el que ha obtenido mejores resultados en clasificaci\'on) de acuerdo a un \textit{criterio de evaluaci\'on}. La generaci\'on de estos conjuntos depender\'a de la m\'etrica de evaluaci\'on, la cual puede corresponder a una de las siguientes categor\'ias: de filtrado, wrappers o m\'etodo embebido.
-\item \textbf{Criterio de parada:}
+\item \textbf{Criterio de parada:} El criterio de parada determina cuando el proceso de selecci\'on de caracter\'isticas debiese de detenerse. Algunos criterios de detenci\'on usados corresponden a: un n\'umero suficiente de buenos subconjuntos es seleccionado, la agregaci\'on de nuevas caracter\'isticas ya no produce una mejora en el subconjunto, alguna condici\'on l\'imite es alcanzada como el n\'umero m\'inimo o m\'aximo de caracter\'isticas o de iteraciones en la generaci\'on de subconjuntos, o simplemente la finalizaci\'on de la b\'usqueda de subconjuntos (no hay m\'as subconjuntos por generar).
+%A stopping criterion determines when the feature selection process should stop. Some frequently used stopping criteria are:
 \item \textbf{Validaci\'on:} El subconjunto seleccionado usualmente requiere de ser validado a trav\'es de conocimiento que se tenga de los datos o a trav\'es de diferentes pruebas usando datos sint\'eticos o reales.
 \end{enumerate}
 \subsection{Metodolog\'ias para la generaci\'on de subconjuntos}
 \begin{enumerate}
-\item \textbf{Completa:} 
-\item \textbf{Heur\'istica:}
-\item \textbf{Aleatoria:}
+\item \textbf{Completa:}  Garantiza la obtenci\'on del resultado \'optimo de acuerdo al criterio de evaluaci\'on usado . Mientras que una b\'usqueda exhaustiva es completa, una b\'usqueda no requiere ser exhaustiva para asegurar completitud. Algunos ejemplos de m\'etodos completos son \textit{branch and bound} y \textit{beam search}.
+\item \textbf{Heur\'istica:} La generaci\'on de subconjuntos es esencialmente una b\'usqueda heur\'istica, cuyo espacio de estados est\'a definido por la cantidad de subconjuntos a ser evaluados. Es deber del investigador determinar el subconjunto de partida y que direcci\'on tomar (agregar y/o quitar atributos)~\cite{liuyu}.  
+\item \textbf{Aleatoria:} Comienza con una selecci\'on aleatoria de alg\'un subconjunto y luego procede en dos direcciones diferentes: una es realizando una b\'usqueda secuencial aleatoria (por ejemplo, \textit{random-start hill-climbing}, \textit{simulated annealing}), la otra direcci\'on corresponde a generar el pr\'oximo subconjunto de forma completamente aleatoria (usando el algoritmo de \textit{Las Vegas}). 
 \end{enumerate}
 \subsection{Metodolog\'ias de evaluaci\'on de subconjuntos}
+\begin{enumerate}
+\item \textbf{Basada en distancia:} Corresponden a las metodolog\'ias llamadas tambi\'en de separabilidad, divergencia o de medidas de discriminaci\'on. Para el problema de dos clases se preferen los atributos que aporten la mayor distancia posible entre las clases. 
+\item \textbf{Basada en informaci\'on:} Corresponde a la medida de la ganancia de informaci\'on por atributo: la ganancia est\'a definida por la diferencia entre la incerteza del prior y del posterior esperado de la clase usando un atributo espec\'ifico. Un atributo es preferido respecto de otro si la ganancia de informaci\'on es mayor.
+\item \textbf{Basada en dependencia:} Relacionado con la medida de correlaci\'on o similitud. Se detecta la dependencia entre atributos, si alguno de estos es funci\'on de otro o puede ser predicho por tal. Un atributo es preferido respecto del otro si la asociaci\'on del primero con la clase que se quiere determinar es mayor que la asociaci\'on del segundo atributo con la misma clase.
+\item \textbf{Basada en consistencia:} Estas metodolog\'ias dependen fuertemente en la informaci\'on de la clase y del bias que genera el criterio de la m\'inima cantidad de atributos al momento de seleccionar subconjuntos de caracter\'isticas. Esta metodolog\'ia intenta encontrar el subconjunto de menor tama\~no que pueda separar las clases consistentemente. Una inconsistencia se define como dos instancias que tienen los mismos valores en determinadas caracter\'isticas pero son pertenecientes a diferentes clases.
+\item \textbf{Basada en error de clasificaci\'on:}
+\end{enumerate}

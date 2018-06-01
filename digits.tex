@@ -1,11 +1,19 @@
-\section{Selecci\'on de atributos y clasificaci\'on de d\'igitos}
+\section{Selecci\'on de atributos y clasificaci\'on de d\'igitos}\label{sec4}
 
 \subsection{Obtenci\'on de archivo ARFF}
-La transformaci\'on del 
+La transformaci\'on del CSV que contiene los datos de los d\'igitos manuscritos fue realizada en \textsc{Python}, a trav\'es del siguiente c\'odigo:
 \lstinputlisting[language=Python, firstline=7, caption=csv2arff.py]{../csv2arff.py}
 
-\subsection{Clasificaci\'on por defecto}
+La funci\'on \texttt{write\_str} recibe como par\'ametros la cantidad de atributos que se encontraron en la base de datos, y procede a la construcci\'on de un \textit{header} de archivo ARFF, a partir de esta cantidad, concatenando el string que etiqueta los atributos. Como estos no tienen nombre (originalmente, pueden ser identificados por so posici\'on en la instancia) se les identific\'o como \textit{attr\_n} donde \textit{n} es un n\'umero entero, y corresponde a la posici\'on en la secuencia de car\'acter\'isticas, comenzando desde 1.
+\bigskip
 
+Con las clases definidas en un string, se procede a concatenar este string para retornarlo en \texttt{write\_arff}. Este m\'etodo recibe como entrada el archivo \textit{1\_digits.txt}, el cual se carga como matriz usando la librer\'ia \textbf{numpy}, para obtener la cantidad de caracteres y poseteriromente ser reescrita en en el nuevo archivo ARFF, denominado \textit{digits.arff}, usando el header entregado por write\_str.
+\subsection{Clasificaci\'on por defecto}
+La primera clasificaci\'on fue realizada usando un modelo SM, entrenandolo con un 66\% y evaluando con el resto de los datos. Este experimento se realiz\'o considerando todos los atributos del dataset original (64 en total). 
 \input{dig_mc1}
+Se logr\'o clasificar correctamente alrededor de 98.8\% instancias.
 \subsection{Clasificaci\'on seleccionando caracter\'isticas con BestFirst y WrapperSubsetEval}
+Este experimento consider\'o la selecci\'on de atributos usando como generador de subconjuntos el m\'etodo BestFirst y evaluador el m\'atodo WrapperSubsetEval. Esta parte se realiz\'o en la pesta\~na de subprocess de WEKA, el cual finalmente consider\'o s\'olo 39 atributos relevantes.
 \input{dig_mc2}
+
+Esta nueva clasificaci\'on (usando igualmente un modelo SMO) consigui\'o un porcentaje de instancias correctamente clasificadas de alrededor de 98.06\%, algo menor al porcentaje obtenido usando todas las caracter\'isticas.

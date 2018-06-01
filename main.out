@@ -14,4 +14,8 @@
 \BOOKMARK [2][-]{subsection.4.1}{Obtenci\363n de archivo ARFF}{section.4}% 14
 \BOOKMARK [2][-]{subsection.4.2}{Clasificaci\363n por defecto}{section.4}% 15
 \BOOKMARK [2][-]{subsection.4.3}{Clasificaci\363n seleccionando caracter\355sticas con BestFirst y WrapperSubsetEval}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Conclusi\363n}{}% 17
+\BOOKMARK [1][-]{section.5}{An\341lisis}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Clasificaci\363n datos diabetes}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Clasificaci\363n datos d\355gitos}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.3}{Reducci\363n de caracter\355sticas}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Conclusi\363n}{}% 21

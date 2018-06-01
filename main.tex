@@ -11,11 +11,11 @@
 % #######################################
 \documentclass[10pt, a4paper]{article}
 \usepackage[spanish]{babel}
-\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\usepackage[a4paper,outer=1.cm,inner=1.cm,top=1.75cm,bottom=1.3cm]{geometry}
 \twocolumn
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
-
+\usepackage{floatrow}
 \graphicspath{{./images/}}
 %colour our links, remove weird boxes
 \usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
@@ -97,6 +97,7 @@
 \begin{document}
 	\maketitle
 	\begin{abstract}
+	En el presente trabajo se exponen los efectos de  la selecci\'on de atributos sobre dos conjuntos de datos diferentes: datos m\'edicos relacionados con la determinaci\'on de diabetes en pacientes y de datos relacionados con escritura a mano alzada de d\'igitos  (los cuales son analizados con un software destinado a la lectura de documentos manuscritos). El clasificador usado para ambos conjuntos fue el de SMO, usando una aproximaci\'on lineal. El primer conjunto mencionado (diabetes) tuvo un comportamiento positivo al momento de seleccionar atributos, y por tanto disminuyendo en n\'umero. Por el contrario, el conjunto de datos de d\'igitos se vio afectado negativamente con la disminuci\'on de sus dimensiones con la elecci\'on de caracter\'isticas.
 	    %Replace the lipsum command with actual text 
 		%\lipsum[2]
 	\end{abstract}
@@ -107,6 +108,7 @@
 \input{marco}
 \input{diabetes}
 \input{digits}
+\input{analisis}
 \input{conclusiones}    
     %\figuremacro{h}{placeholder}{ImageTitle}{ - Some Descriptive Text}{1.0}
 
